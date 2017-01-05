@@ -1,0 +1,18 @@
+﻿#
+# 用于 AD DS 部署的 Windows PowerShell 脚本
+#
+
+Import-Module ADDSDeployment
+Install-ADDSForest `
+-CreateDnsDelegation:$false `
+-DatabasePath "C:\Windows\NTDS" `
+-DomainMode "Win2012" `
+-DomainName "etop.scau.edu.cn" `
+-DomainNetbiosName "ETOP" `
+-ForestMode "Win2012" `
+-InstallDns:$true `
+-LogPath "C:\Windows\NTDS" `
+-NoRebootOnCompletion:$false `
+-SysvolPath "C:\Windows\SYSVOL" `
+-Force:$true
+

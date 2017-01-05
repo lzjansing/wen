@@ -1,0 +1,12 @@
+Install-Package -Name docker -ProviderName DockerMsftProvider
+sconfig
+Restart-Computer -Force
+docker run microsoft/dotnet-samples:dotnetapp-nanoserver
+
+next:
+Start-Service Docker
+
+
+
+
+无法启动服务“Docker Engine (Docker)”。

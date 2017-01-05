@@ -1,0 +1,20 @@
+http://www.cnblogs.com/poissonnotes/p/3238238.html
+
+install the owa by cmd:http://www.cnblogs.com/poissonnotes/p/3238238.html
+dd-WindowsFeature Web-Server,Web-Mgmt-Tools,Web-Mgmt-Console,Web-WebServer,Web-Common-Http,Web-Default-Doc,Web-Static-Content,Web-Performance,Web-Stat-Compression,Web-Dyn-Compression,Web-Security,Web-Filtering,Web-Windows-Auth,Web-App-Dev,Web-Net-Ext45,Web-Asp-Net45,Web-ISAPI-Ext,Web-ISAPI-Filter,Web-Includes,InkandHandwritingServices
+deploy the owa :
+New-OfficeWebAppsFarm –InternalURL "http://OfficeWebApps.veekee.cn" –AllowHttp –EditingEnabled
+
+
+＃＃文件太大解决方案(>10M)
+服务默认支持的最大文件大小是10M，大于10M会报错。可以通过以下步骤解决此问题
+C:\Program Files\Microsoft Office Web Apps\OpenFromUrlHost\Settings_Service.ini
+ApplicationRoot=(System.String)/oh
+在默认内容后添加(512000/1024M,可以根据自己的需求设定)
+OpenFromUrlMaxFileSizeInKBytes=(System.Int32)512000;
+C:\Program Files\Microsoft Office Web Apps\OpenFromUrlWeb 下的Settings_Service.ini，进行相同的修改
+文／KK的记录（简书作者）
+原文链接：http://www.jianshu.com/p/f527e89233b3
+著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。
+
+version测试
